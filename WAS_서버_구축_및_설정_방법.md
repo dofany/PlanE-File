@@ -161,7 +161,7 @@ Wildfly를 root사용자로 실행하는 것은 보안상 취약해지므로 모
 
 ​	다운로드가 완료되면 tar.gz 파일의 압축을 풀고 /opt 디렉토리로 이동한다.
 
-![was3_1](/uploads/297727be58f01c3e523aeb030b87ddc1/was3_1.png)
+![was3_1](/uploads/2265e190c69968d9406e9e0346f822b7/was3_1.png)
 
 - tar xf /tmp/wildfly-$WILDFLY_VERSION.tar.gz -C /opt/
 
