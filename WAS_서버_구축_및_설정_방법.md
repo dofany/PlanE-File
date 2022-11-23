@@ -66,11 +66,11 @@ Tomcat이 대부분 Servlet Container와 Web Server인 반면 Jboss는 embedded 
 
 ​	wildfly 호환 확인 : https://www.wildfly.org/news/2020/06/08/WildFly20-Final-Released/
 
-![](/Users/junheekim/Desktop/was/1/1.png)
+![was1_1](/uploads/10851250b3776dc3e36cc9d716a30773/was1_1.png)
 
 - yum install -y java-11-openjdk-devel.x86_64 
 
-![2](/Users/junheekim/Desktop/was/1/2.png)
+![was1_2](/uploads/7d22d1ec0b5eaff692dea5fc53b0a95a/was1_2.png)
 
 * "java -version" 명령어로 openJDK 11 버전이 잘 설치되었는지 확인할 수 있다.
 
@@ -78,11 +78,11 @@ Tomcat이 대부분 Servlet Container와 Web Server인 반면 Jboss는 embedded 
 
 #### - JAVA PATH 설정
 
-![4](/Users/junheekim/Desktop/was/1/4.png)
+![was1_4](/uploads/460824c51a7c840c6c32efd77f779b23/was1_4.png)
 
 * "readlink -f /bin/javac" 명령어 실행 후 나오는 경로에서 bin/javac 전까지만 복사한다.
 
-![](/Users/junheekim/Desktop/was/1/5.png)
+![was1_5](/uploads/64211222c8b816021be65e2ffd42e4b0/was1_5.png)
 
 * "vi /etc/profile" 맨 하단에 export 작성하고 저장한다.
   export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-11.0.17.0.8-2.el7_9.x86_64/ 
@@ -101,7 +101,7 @@ Wildfly를 root사용자로 실행하는 것은 보안상 취약해지므로 모
 
 #### - group 생성
 
-![1](/Users/junheekim/Desktop/was/2/1.png)
+![was2_1](/uploads/c8a72b832c77088d176289c1c944f0d3/was2_1.png)
 
 - groupadd -r wildfly
 
@@ -111,7 +111,7 @@ Wildfly를 root사용자로 실행하는 것은 보안상 취약해지므로 모
 
 #### - user 생성
 
-![2](/Users/junheekim/Desktop/was/2/2.png)
+![was2_2](/uploads/4f52840fee969f1147950564a15896cb/was2_2.png)
 
 * useradd -r -g wildfly -d /opt/wildfly -s /sbin/nologin wildfly
 
@@ -161,7 +161,7 @@ Wildfly를 root사용자로 실행하는 것은 보안상 취약해지므로 모
 
 ​	다운로드가 완료되면 tar.gz 파일의 압축을 풀고 /opt 디렉토리로 이동한다.
 
-![2](/Users/junheekim/Desktop/was/3/2.png)
+![was3_1](/uploads/297727be58f01c3e523aeb030b87ddc1/was3_1.png)
 
 - tar xf /tmp/wildfly-$WILDFLY_VERSION.tar.gz -C /opt/
 
@@ -175,7 +175,7 @@ Wildfly를 root사용자로 실행하는 것은 보안상 취약해지므로 모
 
 #### - /opt/wildfly 심볼릭 링크 생성
 
-![3](/Users/junheekim/Desktop/was/3/3.png)
+![was3_3](/uploads/b623c6c4c498b479ab187fc4287d0baf/was3_3.png)
 
 - ln -s /opt/wildfly-$WILDFLY_VERSION /opt/wildfly
 
@@ -189,7 +189,7 @@ Wildfly를 root사용자로 실행하는 것은 보안상 취약해지므로 모
 
 ​	디렉터리 소유권을 사용자 및 그룹 wildfly로 변경합니다.
 
-![5](/Users/junheekim/Desktop/was/3/5.png)
+![was3_5](/uploads/0e0046859ada5cdaec7f5b8724fc06f2/was3_5.png)
 
 - chown -RH wildfly: /opt/wildfly
 
@@ -201,11 +201,11 @@ Wildfly를 root사용자로 실행하는 것은 보안상 취약해지므로 모
 
 #### - WILDFLY HOME 설정
 
-![4](/Users/junheekim/Desktop/was/3/4.png)
+![was3_4](/uploads/9c63e1863a8d34d825c476a09123754d/was3_4.png)
 
 * "vi /etc/profile" 하단에 "export WILDFLY_HOME=/opt/wildfly" 을 작성하고 저장한다.
 
-![6](/Users/junheekim/Desktop/was/3/6.png)
+![was3_6](/uploads/f96d8fe851374077e94f1e2a873850dc/was3_6.png)
 
 * "source /etc/profile" 적용 후 $WILDFLY_HOME 확인 가능
 
@@ -221,7 +221,7 @@ Wildfly를 root사용자로 실행하는 것은 보안상 취약해지므로 모
 
 ​	먼저, 해당 구성 파일을 저장할 디렉토리를 생성한다.
 
-![1](/Users/junheekim/Desktop/was/4/1.png)
+![was4_1](/uploads/f17352a69b39a5abc3eabec06c509184/was4_1.png)
 
 - mkdir -p /etc/wildfly
 
@@ -237,13 +237,13 @@ Wildfly를 root사용자로 실행하는 것은 보안상 취약해지므로 모
 
 ##### 		(1) wildfly.conf
 
-![2](/Users/junheekim/Desktop/was/4/2.png)
+![was4_2](/uploads/7b1020d2d4a09b7ac1c5ede5e27f9955/was4_2.png)
 
 - cp /opt/wildfly/docs/contrib/scripts/systemd/wildfly.conf /etc/wildfly/
 
 ##### 		(2) launch.sh
 
-![3](/Users/junheekim/Desktop/was/4/3.png)
+![was4_3](/uploads/3c5207ec844fb84b33e2cd55422c3fff/was4_3.png)
 
 - cp /opt/wildfly/docs/contrib/scripts/systemd/launch.sh /opt/wildfly/bin/
 - /opt/wildfly/**bin** 디렉토리의 스크립트에는 실행 파일 플래그가 있기 때문에 실행 권한을 추가해준다.
@@ -251,13 +251,13 @@ Wildfly를 root사용자로 실행하는 것은 보안상 취약해지므로 모
 
 ##### 		(3) wildfly.service
 
-![4](/Users/junheekim/Desktop/was/4/4.png)
+![was4_4](/uploads/b58be3324e0abf1e029f49e57fa21dd4/was4_4.png)
 
 - cp /opt/wildfly/docs/contrib/scripts/systemd/wildfly.service /etc/systemd/system/
 
 #### - daemon 관리 및 service 실행
 
-![5](/Users/junheekim/Desktop/was/4/5.png)
+![was4_5](/uploads/f25ae28170b849c4a59cffcb5e68deba/was4_5.png)
 
 - 새 service 파일 생성 알림
   systemctl daemon-reload
@@ -266,7 +266,7 @@ Wildfly를 root사용자로 실행하는 것은 보안상 취약해지므로 모
 - 부팅시 자동 실행 설정
   systemctl enable wildfly
 
-![6](/Users/junheekim/Desktop/was/4/6.png)
+![was4_6](/uploads/0be0f223b6f565876cdec96a4802f174/was4_6.png)
 
 - wildfly 실행 상태 확인
   systemctl status wildfly
@@ -285,12 +285,12 @@ Wildfly를 root사용자로 실행하는 것은 보안상 취약해지므로 모
 
 추가적으로, 오라클 클라우드에서는 포트개방을(?) 해줘야합니다.
 
-![1](/Users/junheekim/Desktop/was/5/1.png)
+![was5_1](/uploads/7b8029939acea02ccd23619f8002f8be/was5_1.png)
 
 - 8080 포트 개방
   firewall-cmd --zone=public --permanent --add-port=8080/tcp
 
-![2](/Users/junheekim/Desktop/was/5/2.png)
+![was5_2](/uploads/f7799d5bc52d730ce88f30e6ab2f341b/was5_2.png)
 
 - 방화벽 리로드(적용)
   firewall-cmd --reload
@@ -301,6 +301,6 @@ Wildfly를 root사용자로 실행하는 것은 보안상 취약해지므로 모
 
 ------
 
-![스크린샷 2022-11-23 오후 5.46.18 복사본](/Users/junheekim/Desktop/was/5/스크린샷 2022-11-23 오후 5.46.18 복사본.png)
+![was6_1](/uploads/0d17f93120c079464a0d7e14caad318f/was6_1.png)
 
 *  http://[IP주소]:8080
