@@ -143,7 +143,7 @@ Wildfly를 root사용자로 실행하는 것은 보안상 취약해지므로 모
 
 ​	wildfly 버전을 선언한 뒤, wget 명령을 사용하여 /tmp 디렉토리에 WildFly 아카이브를 다운로드한다.
 
-![1](/Users/junheekim/Desktop/was/3/1.png)
+![was3_1](/uploads/15f97e0415ff1ab30d099ae3b50cc40d/was3_1.png)
 
 - WILDFLY VERSION=20.0.1.Final
 
@@ -161,7 +161,7 @@ Wildfly를 root사용자로 실행하는 것은 보안상 취약해지므로 모
 
 ​	다운로드가 완료되면 tar.gz 파일의 압축을 풀고 /opt 디렉토리로 이동한다.
 
-![was3_1](/uploads/2265e190c69968d9406e9e0346f822b7/was3_1.png)
+![was3_2](/uploads/817bbb56a461877543f51c937dac9b11/was3_2.png)
 
 - tar xf /tmp/wildfly-$WILDFLY_VERSION.tar.gz -C /opt/
 
