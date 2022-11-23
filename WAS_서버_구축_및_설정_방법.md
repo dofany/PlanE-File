@@ -14,7 +14,8 @@ Publish Date: 2022.11.20
 
 동적 컨텐츠를 제공하기 위해 만들어진 Web Application Server로써 웹 프로그램을 실행할 수 있는 환경을 제공한다.
 
-Tomcat이 대부분 Servlet Container와 Web Server인 반면 Jboss는 embedded tomcat을 포함해 Servlet Container와 Web server 모두를 사용하는 JEE 스택(기업환경의 어플리케이션을 만드는데 필요한 스펙들을 모아둔 스펙 집합)으로 확장한다.
+
+Tomcat이 대부분 Servlet Container와 Web Server인 반면, Jboss Servlet Container와 Web server 포함하는 JEE 스택(기업환경의 어플리케이션을 만드는데 필요한 스펙들을 모아둔 스펙 집합)으로 확장한다.
 
 
 
