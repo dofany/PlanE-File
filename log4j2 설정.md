@@ -1,9 +1,12 @@
-# SpringBoot Console Log Setting
+# SpringBoot Logging Setting
 
 
 
 ## 목차
-- [yum의 repository 설치](#yum의-repository-설치)
+- [Logging 툴의 종류](#Logging-툴의-종류)
+- [Log4j 취약점 이슈](#Log4j-취약점-이슈)
+- [사용 툴](#사용-툴)
+- [Setting](#Setting)
 
 
 
@@ -45,7 +48,7 @@
 
     
 
-## 설정 방법
+## Setting
 - ### pom.xml에서 dependency 선언
 
   - #### 기존에 내장되어있던 log4j를 exclude 시키고 log4j2 dependency를 추가
